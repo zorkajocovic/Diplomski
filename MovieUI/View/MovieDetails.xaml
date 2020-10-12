@@ -1,0 +1,66 @@
+﻿<mah:MetroWindow
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="MovieUI.View.MovieDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieUI.View"
+        mc:Ignorable="d"
+        Title="Movie Details" Height="714.767" Width="773.978">
+    <Grid Margin="0,0,0,-6">
+        <Label Content="Director:" HorizontalAlignment="Left" Margin="64,53,0,0" VerticalAlignment="Top" Width="95" FontWeight="Bold"/>
+        <Label Content="Actors:" HorizontalAlignment="Left" Margin="64,84,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Distributor:" HorizontalAlignment="Left" Margin="64,115,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Duration:" HorizontalAlignment="Left" Margin="64,147,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Genre:" HorizontalAlignment="Left" Margin="64,178,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.323,0.545" Width="69" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="159,58,0,0" TextWrapping="Wrap" Text="{Binding Director}" VerticalAlignment="Top" Height="26" Width="159"/>
+        <TextBlock HorizontalAlignment="Left" Margin="159,85,0,0" TextWrapping="Wrap" Text="{Binding Actors}" VerticalAlignment="Top" Width="246" Height="32"/>
+        <TextBlock HorizontalAlignment="Left" Margin="159,117,0,0" TextWrapping="Wrap" Text="{Binding Distributor}" VerticalAlignment="Top" Height="25" Width="159"/>
+        <TextBlock HorizontalAlignment="Left" Margin="159,183,0,0" TextWrapping="Wrap" Text="{Binding Genres}"  VerticalAlignment="Top" Height="26" Width="159"></TextBlock>
+        <Label Content="{Binding Title}" HorizontalAlignment="Center" Margin="64,10,173,0" VerticalAlignment="Top" Width="332" FontWeight="Bold" FontSize="16" FontStyle="Oblique" FontStretch="Expanded" Foreground="#FF090C47"/>
+        <Grid Margin="0,209,272,0" Height="131" VerticalAlignment="Top">
+            <DataGrid Name="movies" ItemsSource="{Binding AwardsAndFestivals, UpdateSourceTrigger=PropertyChanged}" 
+                         AutoGenerateColumns="False" Margin="2,10,0,0" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="290" Binding="{Binding AwardFestival.Festival.Name}" Header="Festival" />
+                    <DataGridTextColumn Width="290" Binding="{Binding AwardFestival.Award.Name}" Header="Award" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+        <Grid Margin="0,254,268,0" Height="220" VerticalAlignment="Top">
+            <DataGrid Name="critics" ItemsSource="{Binding MovieReviews, UpdateSourceTrigger=PropertyChanged}" 
+                         AutoGenerateColumns="False" Margin="2,84,0,0" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="100" Binding="{Binding Critic.Name}" Header="Critic name" />
+                    <DataGridTextColumn Width="120" Binding="{Binding Critic.Surname}" Header="Critic surname" />
+                    <DataGridTextColumn Width="50" Binding="{Binding Rate}" Header="Rate" />
+                    <DataGridTextColumn Width="290" Binding="{Binding Text}" Header="Review" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Label Content="Description:" HorizontalAlignment="Left" Margin="540,48,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="159,152,0,0" TextWrapping="Wrap" Text="{Binding Duration}" VerticalAlignment="Top" Height="26" Width="154"/>
+        <Label Content="Showing in cinemas:" FontSize="14" HorizontalAlignment="Left" Margin="10,498,0,0" VerticalAlignment="Top" Width="184" FontWeight="Bold"/>
+        <Grid HorizontalAlignment="Left" Height="148" Margin="10,532,0,0" VerticalAlignment="Top" Width="395">
+            <DataGrid ItemsSource="{Binding ShowingCinemas, UpdateSourceTrigger=PropertyChanged}" 
+                      HorizontalAlignment="Left" Height="134" VerticalAlignment="Top" Width="385">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="150" Binding="{Binding Cinema.Name}" Header="cinema" />
+                    <DataGridTextColumn Width="120" Binding="{Binding FromDate}" Header="From date" />
+                    <DataGridTextColumn Width="120" Binding="{Binding ToDate}" Header="To date" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <RichTextBox HorizontalAlignment="Left" Height="125" Margin="410,79,0,0" VerticalAlignment="Top" Width="346" IsReadOnly="True">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="{Binding Description}"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button Command="{Binding AddReview}" Content="add review" HorizontalAlignment="Left" Margin="591,240,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="{Binding MetaScore}" FontSize="18" HorizontalAlignment="Left" Margin="596,10,0,0" VerticalAlignment="Top" Width="86" Height="33"/>
+        <Label Content="Metascore:" FontSize="18" HorizontalAlignment="Left" Margin="494,9,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</mah:MetroWindow>

@@ -1,0 +1,1 @@
+﻿ALTER TABLE Cinema ADD CONSTRAINT Cinema_Place_FK FOREIGN KEY ( Place_Id ) REFERENCES Place ( Id ) ;

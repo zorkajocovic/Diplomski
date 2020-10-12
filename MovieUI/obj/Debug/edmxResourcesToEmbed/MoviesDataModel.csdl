@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FilmModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="C__RefactorLog">
+    <Key>
+      <PropertyRef Name="OperationKey" />
+    </Key>
+    <Property Name="OperationKey" Type="Guid" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BIOSKOP">
+    <Key>
+      <PropertyRef Name="IDBioskopa" />
+    </Key>
+    <Property Name="IDBioskopa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivBioskopa" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MJESTO_IDMjesta" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MJESTO" Relationship="Self.BIOSKOP_MJESTO_FK" FromRole="BIOSKOP" ToRole="MJESTO" />
+    <NavigationProperty Name="FILM" Relationship="Self.Prikazuje" FromRole="BIOSKOP" ToRole="FILM" />
+  </EntityType>
+  <EntityType Name="DISTRIBUTER">
+    <Key>
+      <PropertyRef Name="IDDistributera" />
+    </Key>
+    <Property Name="IDDistributera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivDistributera" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FILM" Relationship="Self.FILM_DISTRIBUTER_FK" FromRole="DISTRIBUTER" ToRole="FILM" />
+  </EntityType>
+  <EntityType Name="FESTIVAL">
+    <Key>
+      <PropertyRef Name="IDFestivala" />
+    </Key>
+    <Property Name="IDFestivala" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivFestivala" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MJESTO_IDMjesta" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MJESTO" Relationship="Self.FESTIVAL_MJESTO_FK" FromRole="FESTIVAL" ToRole="MJESTO" />
+    <NavigationProperty Name="Ucestvuje" Relationship="Self.Ucestvuje_FESTIVAL_FK" FromRole="FESTIVAL" ToRole="Ucestvuje" />
+  </EntityType>
+  <EntityType Name="FILM">
+    <Key>
+      <PropertyRef Name="IDFilma" />
+    </Key>
+    <Property Name="IDFilma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrajanjeFilma" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="NazivFilma" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OpisFilma" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="REZISER_IDRezisera" Type="Int32" Nullable="false" />
+    <Property Name="DISTRIBUTER_IDDistributera" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DISTRIBUTER" Relationship="Self.FILM_DISTRIBUTER_FK" FromRole="FILM" ToRole="DISTRIBUTER" />
+    <NavigationProperty Name="REZISER" Relationship="Self.FILM_REZISER_FK" FromRole="FILM" ToRole="REZISER" />
+    <NavigationProperty Name="Kritika_za_film" Relationship="Self.Kritika_za_film_FILM_FK" FromRole="FILM" ToRole="Kritika_za_film" />
+    <NavigationProperty Name="Ucestvuje" Relationship="Self.Ucestvuje_FILM_FK" FromRole="FILM" ToRole="Ucestvuje" />
+    <NavigationProperty Name="GLUMAC" Relationship="Self.Glumi" FromRole="FILM" ToRole="GLUMAC" />
+    <NavigationProperty Name="BIOSKOP" Relationship="Self.Prikazuje" FromRole="FILM" ToRole="BIOSKOP" />
+    <NavigationProperty Name="ZANR" Relationship="Self.Pripada" FromRole="FILM" ToRole="ZANR" />
+  </EntityType>
+  <EntityType Name="GLUMAC">
+    <Key>
+      <PropertyRef Name="IDGlumca" />
+    </Key>
+    <Property Name="IDGlumca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImeGlumca" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrezimeGlumca" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FILM" Relationship="Self.Glumi" FromRole="GLUMAC" ToRole="FILM" />
+  </EntityType>
+  <EntityType Name="KRITICAR">
+    <Key>
+      <PropertyRef Name="IDKriticara" />
+    </Key>
+    <Property Name="IDKriticara" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImeKriticara" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="PrezimeKriticara" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kritika_za_film" Relationship="Self.Kritika_za_film_KRITICAR_FK" FromRole="KRITICAR" ToRole="Kritika_za_film" />
+  </EntityType>
+  <EntityType Name="KRITIKA">
+    <Key>
+      <PropertyRef Name="IDKritike" />
+    </Key>
+    <Property Name="IDKritike" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TekstKritike" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kritika_za_film" Relationship="Self.Kritika_za_film_KRITIKA_FK" FromRole="KRITIKA" ToRole="Kritika_za_film" />
+  </EntityType>
+  <EntityType Name="Kritika_za_film">
+    <Key>
+      <PropertyRef Name="FILM_IDFilma" />
+      <PropertyRef Name="KRITIKA_IDKritike" />
+      <PropertyRef Name="KRITICAR_IDKriticara" />
+    </Key>
+    <Property Name="FILM_IDFilma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KRITIKA_IDKritike" Type="Int32" Nullable="false" />
+    <Property Name="KRITICAR_IDKriticara" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FILM" Relationship="Self.Kritika_za_film_FILM_FK" FromRole="Kritika_za_film" ToRole="FILM" />
+    <NavigationProperty Name="KRITICAR" Relationship="Self.Kritika_za_film_KRITICAR_FK" FromRole="Kritika_za_film" ToRole="KRITICAR" />
+    <NavigationProperty Name="KRITIKA" Relationship="Self.Kritika_za_film_KRITIKA_FK" FromRole="Kritika_za_film" ToRole="KRITIKA" />
+  </EntityType>
+  <EntityType Name="MJESTO">
+    <Key>
+      <PropertyRef Name="IDMjesta" />
+    </Key>
+    <Property Name="IDMjesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivMjesta" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BIOSKOP" Relationship="Self.BIOSKOP_MJESTO_FK" FromRole="MJESTO" ToRole="BIOSKOP" />
+    <NavigationProperty Name="FESTIVAL" Relationship="Self.FESTIVAL_MJESTO_FK" FromRole="MJESTO" ToRole="FESTIVAL" />
+  </EntityType>
+  <EntityType Name="NAGRADA">
+    <Key>
+      <PropertyRef Name="IDNagrade" />
+    </Key>
+    <Property Name="IDNagrade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivNagrade" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Ucestvuje_IDFilma" Type="Int32" Nullable="false" />
+    <Property Name="Ucestvuje_IDFestivala" Type="Int32" Nullable="false" />
+    <Property Name="GodNagradjivanja" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Ucestvuje" Relationship="Self.NAGRADA_Ucestvuje_FK" FromRole="NAGRADA" ToRole="Ucestvuje" />
+  </EntityType>
+  <EntityType Name="REZISER">
+    <Key>
+      <PropertyRef Name="IDRezisera" />
+    </Key>
+    <Property Name="IDRezisera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImeRezisera" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrezimeRezisera" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FILM" Relationship="Self.FILM_REZISER_FK" FromRole="REZISER" ToRole="FILM" />
+  </EntityType>
+  <EntityType Name="Ucestvuje">
+    <Key>
+      <PropertyRef Name="FILM_IDFilma" />
+      <PropertyRef Name="FESTIVAL_IDFestivala" />
+    </Key>
+    <Property Name="FILM_IDFilma" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FESTIVAL_IDFestivala" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FESTIVAL" Relationship="Self.Ucestvuje_FESTIVAL_FK" FromRole="Ucestvuje" ToRole="FESTIVAL" />
+    <NavigationProperty Name="FILM" Relationship="Self.Ucestvuje_FILM_FK" FromRole="Ucestvuje" ToRole="FILM" />
+    <NavigationProperty Name="NAGRADA" Relationship="Self.NAGRADA_Ucestvuje_FK" FromRole="Ucestvuje" ToRole="NAGRADA" />
+  </EntityType>
+  <EntityType Name="ZANR">
+    <Key>
+      <PropertyRef Name="IDZanra" />
+    </Key>
+    <Property Name="IDZanra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NazivZanra" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FILM" Relationship="Self.Pripada" FromRole="ZANR" ToRole="FILM" />
+  </EntityType>
+  <Association Name="BIOSKOP_MJESTO_FK">
+    <End Role="MJESTO" Type="Self.MJESTO" Multiplicity="1" />
+    <End Role="BIOSKOP" Type="Self.BIOSKOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MJESTO">
+        <PropertyRef Name="IDMjesta" />
+      </Principal>
+      <Dependent Role="BIOSKOP">
+        <PropertyRef Name="MJESTO_IDMjesta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FILM_DISTRIBUTER_FK">
+    <End Role="DISTRIBUTER" Type="Self.DISTRIBUTER" Multiplicity="1" />
+    <End Role="FILM" Type="Self.FILM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DISTRIBUTER">
+        <PropertyRef Name="IDDistributera" />
+      </Principal>
+      <Dependent Role="FILM">
+        <PropertyRef Name="DISTRIBUTER_IDDistributera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FESTIVAL_MJESTO_FK">
+    <End Role="MJESTO" Type="Self.MJESTO" Multiplicity="1" />
+    <End Role="FESTIVAL" Type="Self.FESTIVAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MJESTO">
+        <PropertyRef Name="IDMjesta" />
+      </Principal>
+      <Dependent Role="FESTIVAL">
+        <PropertyRef Name="MJESTO_IDMjesta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ucestvuje_FESTIVAL_FK">
+    <End Role="FESTIVAL" Type="Self.FESTIVAL" Multiplicity="1" />
+    <End Role="Ucestvuje" Type="Self.Ucestvuje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FESTIVAL">
+        <PropertyRef Name="IDFestivala" />
+      </Principal>
+      <Dependent Role="Ucestvuje">
+        <PropertyRef Name="FESTIVAL_IDFestivala" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FILM_REZISER_FK">
+    <End Role="REZISER" Type="Self.REZISER" Multiplicity="1" />
+    <End Role="FILM" Type="Self.FILM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="REZISER">
+        <PropertyRef Name="IDRezisera" />
+      </Principal>
+      <Dependent Role="FILM">
+        <PropertyRef Name="REZISER_IDRezisera" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Kritika_za_film_FILM_FK">
+    <End Role="FILM" Type="Self.FILM" Multiplicity="1" />
+    <End Role="Kritika_za_film" Type="Self.Kritika_za_film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILM">
+        <PropertyRef Name="IDFilma" />
+      </Principal>
+      <Dependent Role="Kritika_za_film">
+        <PropertyRef Name="FILM_IDFilma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ucestvuje_FILM_FK">
+    <End Role="FILM" Type="Self.FILM" Multiplicity="1" />
+    <End Role="Ucestvuje" Type="Self.Ucestvuje" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FILM">
+        <PropertyRef Name="IDFilma" />
+      </Principal>
+      <Dependent Role="Ucestvuje">
+        <PropertyRef Name="FILM_IDFilma" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Kritika_za_film_KRITICAR_FK">
+    <End Role="KRITICAR" Type="Self.KRITICAR" Multiplicity="1" />
+    <End Role="Kritika_za_film" Type="Self.Kritika_za_film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KRITICAR">
+        <PropertyRef Name="IDKriticara" />
+      </Principal>
+      <Dependent Role="Kritika_za_film">
+        <PropertyRef Name="KRITICAR_IDKriticara" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Kritika_za_film_KRITIKA_FK">
+    <End Role="KRITIKA" Type="Self.KRITIKA" Multiplicity="1" />
+    <End Role="Kritika_za_film" Type="Self.Kritika_za_film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KRITIKA">
+        <PropertyRef Name="IDKritike" />
+      </Principal>
+      <Dependent Role="Kritika_za_film">
+        <PropertyRef Name="KRITIKA_IDKritike" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="NAGRADA_Ucestvuje_FK">
+    <End Role="Ucestvuje" Type="Self.Ucestvuje" Multiplicity="1" />
+    <End Role="NAGRADA" Type="Self.NAGRADA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ucestvuje">
+        <PropertyRef Name="FILM_IDFilma" />
+        <PropertyRef Name="FESTIVAL_IDFestivala" />
+      </Principal>
+      <Dependent Role="NAGRADA">
+        <PropertyRef Name="Ucestvuje_IDFilma" />
+        <PropertyRef Name="Ucestvuje_IDFestivala" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Glumi">
+    <End Role="FILM" Type="Self.FILM" Multiplicity="*" />
+    <End Role="GLUMAC" Type="Self.GLUMAC" Multiplicity="*" />
+  </Association>
+  <Association Name="Prikazuje">
+    <End Role="BIOSKOP" Type="Self.BIOSKOP" Multiplicity="*" />
+    <End Role="FILM" Type="Self.FILM" Multiplicity="*" />
+  </Association>
+  <Association Name="Pripada">
+    <End Role="FILM" Type="Self.FILM" Multiplicity="*" />
+    <End Role="ZANR" Type="Self.ZANR" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="FilmEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__RefactorLog" EntityType="Self.C__RefactorLog" />
+    <EntitySet Name="BIOSKOP" EntityType="Self.BIOSKOP" />
+    <EntitySet Name="DISTRIBUTER" EntityType="Self.DISTRIBUTER" />
+    <EntitySet Name="FESTIVAL" EntityType="Self.FESTIVAL" />
+    <EntitySet Name="FILM" EntityType="Self.FILM" />
+    <EntitySet Name="GLUMAC" EntityType="Self.GLUMAC" />
+    <EntitySet Name="KRITICAR" EntityType="Self.KRITICAR" />
+    <EntitySet Name="KRITIKA" EntityType="Self.KRITIKA" />
+    <EntitySet Name="Kritika_za_film" EntityType="Self.Kritika_za_film" />
+    <EntitySet Name="MJESTO" EntityType="Self.MJESTO" />
+    <EntitySet Name="NAGRADA" EntityType="Self.NAGRADA" />
+    <EntitySet Name="REZISER" EntityType="Self.REZISER" />
+    <EntitySet Name="Ucestvuje" EntityType="Self.Ucestvuje" />
+    <EntitySet Name="ZANR" EntityType="Self.ZANR" />
+    <AssociationSet Name="BIOSKOP_MJESTO_FK" Association="Self.BIOSKOP_MJESTO_FK">
+      <End Role="MJESTO" EntitySet="MJESTO" />
+      <End Role="BIOSKOP" EntitySet="BIOSKOP" />
+    </AssociationSet>
+    <AssociationSet Name="FILM_DISTRIBUTER_FK" Association="Self.FILM_DISTRIBUTER_FK">
+      <End Role="DISTRIBUTER" EntitySet="DISTRIBUTER" />
+      <End Role="FILM" EntitySet="FILM" />
+    </AssociationSet>
+    <AssociationSet Name="FESTIVAL_MJESTO_FK" Association="Self.FESTIVAL_MJESTO_FK">
+      <End Role="MJESTO" EntitySet="MJESTO" />
+      <End Role="FESTIVAL" EntitySet="FESTIVAL" />
+    </AssociationSet>
+    <AssociationSet Name="Ucestvuje_FESTIVAL_FK" Association="Self.Ucestvuje_FESTIVAL_FK">
+      <End Role="FESTIVAL" EntitySet="FESTIVAL" />
+      <End Role="Ucestvuje" EntitySet="Ucestvuje" />
+    </AssociationSet>
+    <AssociationSet Name="FILM_REZISER_FK" Association="Self.FILM_REZISER_FK">
+      <End Role="REZISER" EntitySet="REZISER" />
+      <End Role="FILM" EntitySet="FILM" />
+    </AssociationSet>
+    <AssociationSet Name="Kritika_za_film_FILM_FK" Association="Self.Kritika_za_film_FILM_FK">
+      <End Role="FILM" EntitySet="FILM" />
+      <End Role="Kritika_za_film" EntitySet="Kritika_za_film" />
+    </AssociationSet>
+    <AssociationSet Name="Ucestvuje_FILM_FK" Association="Self.Ucestvuje_FILM_FK">
+      <End Role="FILM" EntitySet="FILM" />
+      <End Role="Ucestvuje" EntitySet="Ucestvuje" />
+    </AssociationSet>
+    <AssociationSet Name="Kritika_za_film_KRITICAR_FK" Association="Self.Kritika_za_film_KRITICAR_FK">
+      <End Role="KRITICAR" EntitySet="KRITICAR" />
+      <End Role="Kritika_za_film" EntitySet="Kritika_za_film" />
+    </AssociationSet>
+    <AssociationSet Name="Kritika_za_film_KRITIKA_FK" Association="Self.Kritika_za_film_KRITIKA_FK">
+      <End Role="KRITIKA" EntitySet="KRITIKA" />
+      <End Role="Kritika_za_film" EntitySet="Kritika_za_film" />
+    </AssociationSet>
+    <AssociationSet Name="NAGRADA_Ucestvuje_FK" Association="Self.NAGRADA_Ucestvuje_FK">
+      <End Role="Ucestvuje" EntitySet="Ucestvuje" />
+      <End Role="NAGRADA" EntitySet="NAGRADA" />
+    </AssociationSet>
+    <AssociationSet Name="Glumi" Association="Self.Glumi">
+      <End Role="FILM" EntitySet="FILM" />
+      <End Role="GLUMAC" EntitySet="GLUMAC" />
+    </AssociationSet>
+    <AssociationSet Name="Prikazuje" Association="Self.Prikazuje">
+      <End Role="BIOSKOP" EntitySet="BIOSKOP" />
+      <End Role="FILM" EntitySet="FILM" />
+    </AssociationSet>
+    <AssociationSet Name="Pripada" Association="Self.Pripada">
+      <End Role="FILM" EntitySet="FILM" />
+      <End Role="ZANR" EntitySet="ZANR" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

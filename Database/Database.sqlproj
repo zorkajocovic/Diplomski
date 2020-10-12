@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{b6dc3816-763f-44d1-af4e-0f0272e2f21f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Database</RootNamespace>
+    <AssemblyName>Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Schema objects" />
+    <Folder Include="Schema objects\Schemas" />
+    <Folder Include="Schema objects\Schemas\dbo" />
+    <Folder Include="Schema objects\Schemas\dbo\Tables" />
+    <Folder Include="Schema objects\Schemas\dbo\Programmability" />
+    <Folder Include="Schema objects\Schemas\dbo\Programmability\Functions" />
+    <Folder Include="Schema objects\Schemas\dbo\Programmability\Stored Procedures" />
+    <Folder Include="Schema objects\Schemas\dbo\Programmability\Types" />
+    <Folder Include="Schema objects\Schemas\dbo\Views" />
+    <Folder Include="Schema objects\Schemas\dbo\Tables\Keys" />
+    <Folder Include="Schema objects\Schemas\dbo\Tables\Indexes" />
+    <Folder Include="Schema objects\Schemas\dbo\Tables\Triggers" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema objects\Schemas\dbo\Tables\Cinema.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Distributor.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Festival.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Movie.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Actor.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Acts.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Critic.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Review.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Place.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Award.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\ShowsMovie.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Belongs_to.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Director.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Genre.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Cinema_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Distributor_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Festival_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Movie_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Actor_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Acts_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Critic_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Review_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Place_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Award_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\ShowsMovie_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Belongs_to_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Director_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Keys\Genre_PK.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Indexes\IndexMovie.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\Triggers\InsertMovieMetascore.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\AwardFestival.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\MovieFestival.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Tables\MovieFestivalAward.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Programmability\Functions\SearchMoviesByTitle.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Programmability\Functions\CalculateMetascore.sql" />
+    <Build Include="Schema objects\Schemas\dbo\Programmability\Stored Procedures\AddActs.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\AwardFestival_PK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\MovieFestival_PK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\MovieFestivalAward_PK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\AwardFestival_Award_FK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\AwardFestival_Festival_FK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\Cinema_Place_FK_1.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\FK_ASS_1.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\FK_ASS_17.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\FK_ASS_18.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\FK_ASS_2.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\FK_ASS_3.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\FK_ASS_4.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\FK_ASS_7.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\Festival_Place_FK_1.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\MovieFestival_Festival_FK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\MovieFestival_Movie_FK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\Movie_Director_FK_1.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\Movie_Distributor_FK_1.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\Review_Critic_FK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Keys\Review_Movie_FK.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Indexes\IndexCinema.sql" />
+    <None Include="Schema objects\Schemas\dbo\Tables\Triggers\AuditTrigger.sql" />
+    <None Include="Schema objects\Schemas\dbo\Programmability\Stored Procedures\AddBelongsTo.sql" />
+    <None Include="Schema objects\Schemas\dbo\Programmability\Stored Procedures\AddMovieFestival.sql" />
+  </ItemGroup>
+</Project>

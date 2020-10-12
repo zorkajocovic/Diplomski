@@ -1,0 +1,208 @@
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\MovieUI.exe.config
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\MovieUI.exe
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\MovieUI.pdb
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\ControlzEx.dll
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\EntityFramework.dll
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\EntityFramework.SqlServer.dll
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\MahApps.Metro.dll
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\System.Windows.Interactivity.dll
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\ControlzEx.pdb
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\EntityFramework.xml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\EntityFramework.SqlServer.xml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\MahApps.Metro.pdb
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\bin\Debug\MahApps.Metro.xml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI.csprojResolveAssemblyReference.cache
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddMovie.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddActor.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddDirector.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddDistributor.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddGenre.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddMovie.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieMain.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateActor.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateDirector.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateDistributor.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateGenre.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateMovie.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\App.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI_Content.g.cs
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI_MarkupCompile.cache
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI_MarkupCompile.lref
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\App.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddActor.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddDirector.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddDistributor.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\AddGenre.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieMain.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateActor.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateDirector.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateDistributor.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateGenre.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\View\UpdateMovie.baml
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI.g.resources
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI.Properties.Resources.resources
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI.csproj.GenerateResource.cache
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI.csproj.CoreCompileInputs.cache
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI.csproj.CopyComplete
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI.exe
+D:\Zorka\Desktop\Blok 6\Database\MovieUI\obj\Debug\MovieUI.pdb
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\MovieUI.exe.config
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\MovieUI.exe
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\MovieUI.pdb
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\ControlzEx.dll
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\DAL.dll
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\EntityFramework.dll
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\MahApps.Metro.dll
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\DAL.pdb
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\DAL.dll.config
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\ControlzEx.pdb
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\EntityFramework.xml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\MahApps.Metro.pdb
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\bin\Debug\MahApps.Metro.xml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI.csprojAssemblyReference.cache
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddMovie.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateMovie.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddActor.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddAward.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddCinema.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddCritic.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddReview.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddDirector.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddDistributor.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddFestival.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddGenre.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddMovie.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieMain.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddPlace.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\CriticsAndReviews.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\FestivalAndAwards.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\MovieDetails.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateActor.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateAward.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateCinema.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateCritic.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateReview.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateDirector.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateDistributor.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateFestival.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateGenre.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateMovie.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdatePlace.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\App.g.cs
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI_MarkupCompile.cache
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI_MarkupCompile.lref
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\App.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddActor.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddAward.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddCinema.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddCritic.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddReview.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddDirector.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddDistributor.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddFestival.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddGenre.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieMain.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\AddPlace.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\CriticsAndReviews.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\FestivalAndAwards.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\MovieDetails.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateActor.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateAward.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateCinema.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateCritic.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateReview.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateDirector.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateDistributor.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateFestival.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdateGenre.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\View\UpdatePlace.baml
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI.g.resources
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI.Properties.Resources.resources
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI.csproj.GenerateResource.cache
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI.csproj.CoreCompileInputs.cache
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI.csproj.CopyComplete
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI.exe
+C:\Users\Zorka\Desktop\IVgodina\Blok6\Database\MovieUI\obj\Debug\MovieUI.pdb
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\MovieUI.exe.config
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\MovieUI.exe
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\MovieUI.pdb
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\ControlzEx.dll
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\DAL.dll
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\EntityFramework.dll
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\MahApps.Metro.dll
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\DAL.pdb
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\DAL.dll.config
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\ControlzEx.pdb
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\EntityFramework.xml
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\MahApps.Metro.pdb
+C:\Users\Zorka\Desktop\Database\MovieUI\bin\Debug\MahApps.Metro.xml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI.csprojAssemblyReference.cache
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddMovie.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateMovie.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddActor.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddAward.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddCinema.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddCritic.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddReview.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddDirector.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddDistributor.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddFestival.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddGenre.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddMovie.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieMain.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddPlace.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\CriticsAndReviews.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\FestivalAndAwards.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\MovieDetails.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateActor.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateAward.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateCinema.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateCritic.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateReview.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateDirector.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateDistributor.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateFestival.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateGenre.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateMovie.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdatePlace.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\App.g.cs
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI_MarkupCompile.cache
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI_MarkupCompile.lref
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\App.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddActor.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddAward.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddCinema.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddCritic.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddReview.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddDirector.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddDistributor.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddFestival.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddGenre.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieMain.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\AddPlace.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\CriticsAndReviews.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\FestivalAndAwards.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\MovieDetails.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateActor.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateAward.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateCinema.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateCritic.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateReview.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateDirector.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateDistributor.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateFestival.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdateGenre.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\View\UpdatePlace.baml
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI.g.resources
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI.Properties.Resources.resources
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI.csproj.GenerateResource.cache
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI.csproj.CoreCompileInputs.cache
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI.csproj.CopyComplete
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI.exe
+C:\Users\Zorka\Desktop\Database\MovieUI\obj\Debug\MovieUI.pdb

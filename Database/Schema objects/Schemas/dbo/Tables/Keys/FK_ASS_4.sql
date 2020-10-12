@@ -1,0 +1,1 @@
+﻿ALTER TABLE Belongs_to ADD CONSTRAINT FK_ASS_4 FOREIGN KEY ( Movie_Id ) REFERENCES Movie ( Id ) ;

@@ -1,0 +1,1 @@
+﻿ALTER TABLE Review ADD CONSTRAINT Review_PK PRIMARY KEY ( Id ) ;

@@ -1,0 +1,1 @@
+﻿ALTER TABLE Festival ADD CONSTRAINT Festival_PK PRIMARY KEY ( Id ) ;

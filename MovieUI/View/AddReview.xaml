@@ -1,0 +1,25 @@
+﻿<mah:MetroWindow
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"  x:Class="MovieUI.View.AddReview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieUI.View"
+        mc:Ignorable="d"
+        Title="Add Review" Height="356.126" Width="492.778">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="158,69,0,0" TextWrapping="Wrap" Text="Text:" FontSize="20" VerticalAlignment="Top" Width="55"/>
+        <TextBox HorizontalAlignment="Left" Height="117" Margin="46,101,0,0" TextWrapping="Wrap" Text="{Binding Criticism.Text}" VerticalAlignment="Top" Width="394"/>
+        <Button Command="{Binding AddReview}" Content="Add" HorizontalAlignment="Left" Margin="349,265,0,0" VerticalAlignment="Top" Width="81" Height="34" Background="#FF56D679"/>
+        <ComboBox ItemsSource="{Binding Critics}" SelectedIndex="{Binding SelectedCritic}" SelectedItem="{Binding Critic}" HorizontalAlignment="Left" Margin="208,30,0,0" VerticalAlignment="Top" Width="201"/>
+        <Label Content="Critic:" FontSize="16" HorizontalAlignment="Left" Margin="104,25,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label Content="Rate:" FontSize="13" HorizontalAlignment="Left" Margin="46,220,0,0" VerticalAlignment="Top"/>
+        <RadioButton Name="radio1" Content="1" HorizontalAlignment="Left" Margin="118,227,0,0" VerticalAlignment="Top" Checked="radio1_Checked"/>
+        <RadioButton Name="radio2" Content="2" HorizontalAlignment="Left" Margin="168,227,0,0" VerticalAlignment="Top" Checked="radio2_Checked"/>
+        <RadioButton Name="radio3" Content="3" HorizontalAlignment="Left" Margin="237,227,0,0" VerticalAlignment="Top" Checked="radio3_Checked"/>
+        <RadioButton Name="radio4" Content="4" HorizontalAlignment="Left" Margin="299,227,0,0" VerticalAlignment="Top" Checked="radio4_Checked"/>
+        <RadioButton Name="radio5" Content="5" HorizontalAlignment="Left" Margin="369,227,0,0" VerticalAlignment="Top" Checked="radio5_Checked"/>
+        <Button Command="{Binding CriticAndReviews}" Content="All reviews and critics" HorizontalAlignment="Left" Margin="46,272,0,0" VerticalAlignment="Top" Width="152"/>
+
+    </Grid>
+</mah:MetroWindow>

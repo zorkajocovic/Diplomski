@@ -1,0 +1,10 @@
+C:\Users\Zorka\Desktop\Database\Database\bin\Debug\Database.dacpac
+C:\Users\Zorka\Desktop\Database\Database\bin\Debug\Database.dll
+C:\Users\Zorka\Desktop\Database\Database\bin\Debug\Database.pdb
+C:\Users\Zorka\Desktop\Database\Database\obj\Debug\Model.xml
+C:\Users\Zorka\Desktop\Database\Database\obj\Debug\refactor.xml
+C:\Users\Zorka\Desktop\Database\Database\obj\Debug\postdeploy.sql
+C:\Users\Zorka\Desktop\Database\Database\obj\Debug\predeploy.sql
+C:\Users\Zorka\Desktop\Database\Database\obj\Debug\Database.dll
+C:\Users\Zorka\Desktop\Database\Database\obj\Debug\Database.pdb
+C:\Users\Zorka\Desktop\Database\Database\obj\Debug\Database.sqlprojAssemblyReference.cache

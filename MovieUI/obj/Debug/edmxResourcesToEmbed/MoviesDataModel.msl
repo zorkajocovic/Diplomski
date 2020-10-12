@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FilmModelStoreContainer" CdmEntityContainer="FilmEntities1">
+    <EntitySetMapping Name="C__RefactorLog">
+      <EntityTypeMapping TypeName="FilmModel.C__RefactorLog">
+        <MappingFragment StoreEntitySet="__RefactorLog">
+          <ScalarProperty Name="OperationKey" ColumnName="OperationKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BIOSKOP">
+      <EntityTypeMapping TypeName="FilmModel.BIOSKOP">
+        <MappingFragment StoreEntitySet="BIOSKOP">
+          <ScalarProperty Name="IDBioskopa" ColumnName="IDBioskopa" />
+          <ScalarProperty Name="NazivBioskopa" ColumnName="NazivBioskopa" />
+          <ScalarProperty Name="MJESTO_IDMjesta" ColumnName="MJESTO_IDMjesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DISTRIBUTER">
+      <EntityTypeMapping TypeName="FilmModel.DISTRIBUTER">
+        <MappingFragment StoreEntitySet="DISTRIBUTER">
+          <ScalarProperty Name="IDDistributera" ColumnName="IDDistributera" />
+          <ScalarProperty Name="NazivDistributera" ColumnName="NazivDistributera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FESTIVAL">
+      <EntityTypeMapping TypeName="FilmModel.FESTIVAL">
+        <MappingFragment StoreEntitySet="FESTIVAL">
+          <ScalarProperty Name="IDFestivala" ColumnName="IDFestivala" />
+          <ScalarProperty Name="NazivFestivala" ColumnName="NazivFestivala" />
+          <ScalarProperty Name="MJESTO_IDMjesta" ColumnName="MJESTO_IDMjesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FILM">
+      <EntityTypeMapping TypeName="FilmModel.FILM">
+        <MappingFragment StoreEntitySet="FILM">
+          <ScalarProperty Name="IDFilma" ColumnName="IDFilma" />
+          <ScalarProperty Name="TrajanjeFilma" ColumnName="TrajanjeFilma" />
+          <ScalarProperty Name="NazivFilma" ColumnName="NazivFilma" />
+          <ScalarProperty Name="OpisFilma" ColumnName="OpisFilma" />
+          <ScalarProperty Name="REZISER_IDRezisera" ColumnName="REZISER_IDRezisera" />
+          <ScalarProperty Name="DISTRIBUTER_IDDistributera" ColumnName="DISTRIBUTER_IDDistributera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GLUMAC">
+      <EntityTypeMapping TypeName="FilmModel.GLUMAC">
+        <MappingFragment StoreEntitySet="GLUMAC">
+          <ScalarProperty Name="IDGlumca" ColumnName="IDGlumca" />
+          <ScalarProperty Name="ImeGlumca" ColumnName="ImeGlumca" />
+          <ScalarProperty Name="PrezimeGlumca" ColumnName="PrezimeGlumca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KRITICAR">
+      <EntityTypeMapping TypeName="FilmModel.KRITICAR">
+        <MappingFragment StoreEntitySet="KRITICAR">
+          <ScalarProperty Name="IDKriticara" ColumnName="IDKriticara" />
+          <ScalarProperty Name="ImeKriticara" ColumnName="ImeKriticara" />
+          <ScalarProperty Name="PrezimeKriticara" ColumnName="PrezimeKriticara" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KRITIKA">
+      <EntityTypeMapping TypeName="FilmModel.KRITIKA">
+        <MappingFragment StoreEntitySet="KRITIKA">
+          <ScalarProperty Name="IDKritike" ColumnName="IDKritike" />
+          <ScalarProperty Name="TekstKritike" ColumnName="TekstKritike" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kritika_za_film">
+      <EntityTypeMapping TypeName="FilmModel.Kritika_za_film">
+        <MappingFragment StoreEntitySet="Kritika_za_film">
+          <ScalarProperty Name="FILM_IDFilma" ColumnName="FILM_IDFilma" />
+          <ScalarProperty Name="KRITIKA_IDKritike" ColumnName="KRITIKA_IDKritike" />
+          <ScalarProperty Name="KRITICAR_IDKriticara" ColumnName="KRITICAR_IDKriticara" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MJESTO">
+      <EntityTypeMapping TypeName="FilmModel.MJESTO">
+        <MappingFragment StoreEntitySet="MJESTO">
+          <ScalarProperty Name="IDMjesta" ColumnName="IDMjesta" />
+          <ScalarProperty Name="NazivMjesta" ColumnName="NazivMjesta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NAGRADA">
+      <EntityTypeMapping TypeName="FilmModel.NAGRADA">
+        <MappingFragment StoreEntitySet="NAGRADA">
+          <ScalarProperty Name="IDNagrade" ColumnName="IDNagrade" />
+          <ScalarProperty Name="NazivNagrade" ColumnName="NazivNagrade" />
+          <ScalarProperty Name="Ucestvuje_IDFilma" ColumnName="Ucestvuje_IDFilma" />
+          <ScalarProperty Name="Ucestvuje_IDFestivala" ColumnName="Ucestvuje_IDFestivala" />
+          <ScalarProperty Name="GodNagradjivanja" ColumnName="GodNagradjivanja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REZISER">
+      <EntityTypeMapping TypeName="FilmModel.REZISER">
+        <MappingFragment StoreEntitySet="REZISER">
+          <ScalarProperty Name="IDRezisera" ColumnName="IDRezisera" />
+          <ScalarProperty Name="ImeRezisera" ColumnName="ImeRezisera" />
+          <ScalarProperty Name="PrezimeRezisera" ColumnName="PrezimeRezisera" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ucestvuje">
+      <EntityTypeMapping TypeName="FilmModel.Ucestvuje">
+        <MappingFragment StoreEntitySet="Ucestvuje">
+          <ScalarProperty Name="FILM_IDFilma" ColumnName="FILM_IDFilma" />
+          <ScalarProperty Name="FESTIVAL_IDFestivala" ColumnName="FESTIVAL_IDFestivala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZANR">
+      <EntityTypeMapping TypeName="FilmModel.ZANR">
+        <MappingFragment StoreEntitySet="ZANR">
+          <ScalarProperty Name="IDZanra" ColumnName="IDZanra" />
+          <ScalarProperty Name="NazivZanra" ColumnName="NazivZanra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Glumi" TypeName="FilmModel.Glumi" StoreEntitySet="Glumi">
+      <EndProperty Name="FILM">
+        <ScalarProperty Name="IDFilma" ColumnName="FILM_IDFilma" />
+      </EndProperty>
+      <EndProperty Name="GLUMAC">
+        <ScalarProperty Name="IDGlumca" ColumnName="GLUMAC_IDGlumca" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Prikazuje" TypeName="FilmModel.Prikazuje" StoreEntitySet="Prikazuje">
+      <EndProperty Name="BIOSKOP">
+        <ScalarProperty Name="IDBioskopa" ColumnName="BIOSKOP_IDBioskopa" />
+      </EndProperty>
+      <EndProperty Name="FILM">
+        <ScalarProperty Name="IDFilma" ColumnName="FILM_IDFilma" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Pripada" TypeName="FilmModel.Pripada" StoreEntitySet="Pripada">
+      <EndProperty Name="FILM">
+        <ScalarProperty Name="IDFilma" ColumnName="FILM_IDFilma" />
+      </EndProperty>
+      <EndProperty Name="ZANR">
+        <ScalarProperty Name="IDZanra" ColumnName="ZANR_IDZanra" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

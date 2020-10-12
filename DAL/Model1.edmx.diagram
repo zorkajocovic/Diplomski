@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="aa6ed52756d24eb7892065b6d4fcc672" Name="Diagram1">
+        <EntityTypeShape EntityType="IMDBModel.Actor" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Award" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.AwardFestival" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Cinema" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Critic" Width="1.5" PointX="8.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Director" Width="1.5" PointX="6" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Distributor" Width="1.5" PointX="6" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Festival" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Genre" Width="1.5" PointX="6" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Movie" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.MovieFestivalAward" Width="1.5" PointX="7.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Place" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.Review" Width="1.5" PointX="10.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="IMDBModel.ShowsMovie" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="IMDBModel.AwardFestival_Award_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.AwardFestival_Festival_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.FK_ASS_7" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Cinema_Place_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.FK_ASS_17" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Review_Critic_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Director_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Movie_Director_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Movie_Distributor_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Festival_Place_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.FK_ASS_18" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Review_Movie_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Acts" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.Belongs_to" ManuallyRouted="false" />
+        <AssociationConnector Association="IMDBModel.MovieFestival" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

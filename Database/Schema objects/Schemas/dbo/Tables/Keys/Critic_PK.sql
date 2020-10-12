@@ -1,0 +1,1 @@
+﻿ALTER TABLE Critic ADD CONSTRAINT Critic_PK PRIMARY KEY ( Id ) ;

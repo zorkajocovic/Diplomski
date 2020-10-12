@@ -1,0 +1,21 @@
+﻿<Controls:MetroWindow x:Class="MovieUI.View.UpdateDirector"
+                          xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" 
+
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieUI.View"
+        mc:Ignorable="d"
+        Title="Update Director" Height="299.436" Width="378.759">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="50,66,0,0" TextWrapping="Wrap" Text="Name:" FontSize="20" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="47,126,0,0" TextWrapping="Wrap" Text="Surname:" FontSize="20" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="174,74,0,0" TextWrapping="Wrap" Text="{Binding Director.Name}" VerticalAlignment="Top" Width="160"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="174,125,0,0" TextWrapping="Wrap" Text="{Binding Director.Surname}" VerticalAlignment="Top" Width="160"/>
+        <Button Command="{Binding UpdateDirector}" Content="Edit" HorizontalAlignment="Left" Margin="243,197,0,0" VerticalAlignment="Top" Width="81" Height="35" Background="#FF56D679"/>
+        <TextBlock  Text="{Binding Validacija}" Foreground="#FFD40707" TextAlignment="Center" HorizontalAlignment="Left" Margin="72,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="248"/>
+
+    </Grid>
+
+</Controls:MetroWindow>

@@ -1,0 +1,1 @@
+﻿ALTER TABLE Review ADD CONSTRAINT Review_Movie_FK FOREIGN KEY ( Movie_Id ) REFERENCES Movie ( Id ) ;

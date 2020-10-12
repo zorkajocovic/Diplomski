@@ -1,0 +1,47 @@
+﻿<mah:MetroWindow
+    xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="MovieUI.View.CriticsAndReviews"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieUI.View"
+        mc:Ignorable="d"
+        Title="Criticism and Critics" Height="406.015" Width="449.812">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="57" Margin="-2,0,0,0" VerticalAlignment="Top" Width="451">
+            <TabItem Header="All Reviews" Margin="10,0,-33,0">
+                <Grid Margin="0,27,0,-347">
+                    <DataGrid Name="actor" ItemsSource="{Binding Criticisms, UpdateSourceTrigger=PropertyChanged}" 
+                  SelectedItem="{Binding Criticism, UpdateSourceTrigger=PropertyChanged}" 
+                 AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,-147,84" HorizontalAlignment="Left" Width="448">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="40" Binding="{Binding Id}" Header="ID" />
+                            <DataGridTextColumn Width="100" Binding="{Binding Critic.Name}" Header="Critic" />
+                            <DataGridTextColumn Width="140" Binding="{Binding Movie.Title}" Header="Movie" />
+                            <DataGridTextColumn Width="400" Binding="{Binding Text}" Header="Text" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Command="{Binding UpdateCriticism}" Content="Update" HorizontalAlignment="Left"  Margin="66,262,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.435,0.247"/>
+                    <Button Command="{Binding DeleteCriticism}" Content="Delete" HorizontalAlignment="Left" Margin="308,262,0,0" VerticalAlignment="Top" Width="74" Background="#FFEE4C4C"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Margin="54,0,-162,0" Header="All Critics">
+                <Grid Margin="0,27,-8,-347">
+                    <DataGrid Name="critic" ItemsSource="{Binding Critics, UpdateSourceTrigger=PropertyChanged}" 
+                  SelectedItem="{Binding Critic, UpdateSourceTrigger=PropertyChanged}" 
+                 AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,10,84">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="120" Binding="{Binding Name}" Header="Name" />
+                            <DataGridTextColumn Width="160" Binding="{Binding Surname}" Header="Surname" />
+                            <DataGridTextColumn Width="160" Binding="{Binding ReliabilityScore}" Header="Reliability Score" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Command="{Binding AddCritic}" Content="Add" Margin="35,267,355,0" VerticalAlignment="Top" Background="#FF56D679"/>
+                    <Button Command="{Binding UpdateCritic}" Content="Update" HorizontalAlignment="Left"  Margin="192,267,0,0" VerticalAlignment="Top" Width="67"/>
+                    <Button Command="{Binding DeleteCritic}" Content="Delete" HorizontalAlignment="Left" Margin="347,267,0,0" VerticalAlignment="Top" Width="64" Background="#FFEE4C4C"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</mah:MetroWindow>

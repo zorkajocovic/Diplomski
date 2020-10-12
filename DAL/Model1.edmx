@@ -1,0 +1,1192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IMDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="200" />
+          <Property Name="Birthday" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Acts">
+          <Key>
+            <PropertyRef Name="Actor_Id" />
+            <PropertyRef Name="Movie_Id" />
+          </Key>
+          <Property Name="Actor_Id" Type="int" Nullable="false" />
+          <Property Name="Movie_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AwardFestival">
+          <Key>
+            <PropertyRef Name="Award_Id" />
+            <PropertyRef Name="Festival_Id" />
+          </Key>
+          <Property Name="Award_Id" Type="int" Nullable="false" />
+          <Property Name="Festival_Id" Type="int" Nullable="false" />
+          <Property Name="Deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Belongs_to">
+          <Key>
+            <PropertyRef Name="Genre_Id" />
+            <PropertyRef Name="Movie_Id" />
+          </Key>
+          <Property Name="Genre_Id" Type="int" Nullable="false" />
+          <Property Name="Movie_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cinema">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Place_Id" Type="int" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Critic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReliabilityScore" Type="int" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Director">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar" MaxLength="200" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Birthday" Type="nvarchar" MaxLength="50" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Distributor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Festival">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Place_Id" Type="int" Nullable="false" />
+          <Property Name="Date" Type="nvarchar" MaxLength="60" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Duration" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="70" />
+          <Property Name="Desctiprion" Type="text" />
+          <Property Name="Director_Id" Type="int" Nullable="false" />
+          <Property Name="Distributor_Id" Type="int" Nullable="false" />
+          <Property Name="MetaScore" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Image" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="MovieFestival">
+          <Key>
+            <PropertyRef Name="Movie_Id" />
+            <PropertyRef Name="Festival_Id" />
+          </Key>
+          <Property Name="Movie_Id" Type="int" Nullable="false" />
+          <Property Name="Festival_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MovieFestivalAward">
+          <Key>
+            <PropertyRef Name="AwardFestival_Award_Id" />
+            <PropertyRef Name="AwardFestival_Festival_Id" />
+            <PropertyRef Name="MovieFestival_Movie_Id" />
+          </Key>
+          <Property Name="AwardFestival_Award_Id" Type="int" Nullable="false" />
+          <Property Name="AwardFestival_Festival_Id" Type="int" Nullable="false" />
+          <Property Name="MovieFestival_Movie_Id" Type="int" Nullable="false" />
+          <Property Name="Deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Text" Type="text" />
+          <Property Name="Critic_Id" Type="int" Nullable="false" />
+          <Property Name="Rate" Type="int" />
+          <Property Name="Movie_Id" Type="int" Nullable="false" />
+          <Property Name="Deleted" Type="bit" Nullable="false" />
+          <Property Name="Approved" Type="bit" />
+          <Property Name="ApprovalDateTime" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="ShowsMovie">
+          <Key>
+            <PropertyRef Name="Cinema_Id" />
+            <PropertyRef Name="Movie_Id" />
+          </Key>
+          <Property Name="Cinema_Id" Type="int" Nullable="false" />
+          <Property Name="Movie_Id" Type="int" Nullable="false" />
+          <Property Name="FromDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ToDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+        </EntityType>
+        <Association Name="AwardFestival_Award_FK">
+          <End Role="Award" Type="Self.Award" Multiplicity="1" />
+          <End Role="AwardFestival" Type="Self.AwardFestival" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Award">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AwardFestival">
+              <PropertyRef Name="Award_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AwardFestival_Festival_FK">
+          <End Role="Festival" Type="Self.Festival" Multiplicity="1" />
+          <End Role="AwardFestival" Type="Self.AwardFestival" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Festival">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AwardFestival">
+              <PropertyRef Name="Festival_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cinema_Place_FK">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="Cinema" Type="Self.Cinema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cinema">
+              <PropertyRef Name="Place_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Director_FK">
+          <End Role="Director" Type="Self.Director" Multiplicity="1" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Director">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="Director_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Festival_Place_FK">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="Festival" Type="Self.Festival" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Festival">
+              <PropertyRef Name="Place_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_1">
+          <End Role="Actor" Type="Self.Actor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Acts" Type="Self.Acts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Acts">
+              <PropertyRef Name="Actor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_17">
+          <End Role="Cinema" Type="Self.Cinema" Multiplicity="1" />
+          <End Role="ShowsMovie" Type="Self.ShowsMovie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cinema">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShowsMovie">
+              <PropertyRef Name="Cinema_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_18">
+          <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+          <End Role="ShowsMovie" Type="Self.ShowsMovie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShowsMovie">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_2">
+          <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+          <End Role="Acts" Type="Self.Acts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Acts">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_3">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Belongs_to" Type="Self.Belongs_to" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Belongs_to">
+              <PropertyRef Name="Genre_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_4">
+          <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+          <End Role="Belongs_to" Type="Self.Belongs_to" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Belongs_to">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_7">
+          <End Role="AwardFestival" Type="Self.AwardFestival" Multiplicity="1" />
+          <End Role="MovieFestivalAward" Type="Self.MovieFestivalAward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AwardFestival">
+              <PropertyRef Name="Award_Id" />
+              <PropertyRef Name="Festival_Id" />
+            </Principal>
+            <Dependent Role="MovieFestivalAward">
+              <PropertyRef Name="AwardFestival_Award_Id" />
+              <PropertyRef Name="AwardFestival_Festival_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Movie_Director_FK">
+          <End Role="Director" Type="Self.Director" Multiplicity="1" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Director">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="Director_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Movie_Distributor_FK">
+          <End Role="Distributor" Type="Self.Distributor" Multiplicity="1" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distributor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MovieFestival_Festival_FK">
+          <End Role="Festival" Type="Self.Festival" Multiplicity="1" />
+          <End Role="MovieFestival" Type="Self.MovieFestival" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Festival">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovieFestival">
+              <PropertyRef Name="Festival_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MovieFestival_Movie_FK">
+          <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+          <End Role="MovieFestival" Type="Self.MovieFestival" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="MovieFestival">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Review_Critic_FK">
+          <End Role="Critic" Type="Self.Critic" Multiplicity="1" />
+          <End Role="Review" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Critic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="Critic_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Review_Movie_FK">
+          <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+          <End Role="Review" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="AddActs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="actorId" Type="int" Mode="In" />
+          <Parameter Name="movieId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddBelongsToGenre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="genreId" Type="int" Mode="In" />
+          <Parameter Name="movieId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AddMovieFestival" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="festivalId" Type="int" Mode="In" />
+          <Parameter Name="movieId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="CalculateMetascore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="decimal">
+          <Parameter Name="sum" Type="int" Mode="In" />
+          <Parameter Name="movieId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SearchMovieByTitle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchText" Type="nvarchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="Id" Type="int" Nullable="false" />
+                <Property Name="Duration" Type="int" />
+                <Property Name="Title" Type="nvarchar" MaxLength="50" />
+                <Property Name="Desctiprion" Type="text" />
+                <Property Name="Director_Id" Type="int" Nullable="false" />
+                <Property Name="Distributor_Id" Type="int" Nullable="false" />
+                <Property Name="MetaScore" Type="decimal" Precision="18" Scale="0" />
+                <Property Name="Deleted" Type="bit" Nullable="false" />
+                <Property Name="Image" Type="nvarchar" MaxLength="200" Nullable="false" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <EntityContainer Name="IMDBModelStoreContainer">
+          <EntitySet Name="Actor" EntityType="Self.Actor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Acts" EntityType="Self.Acts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AwardFestival" EntityType="Self.AwardFestival" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Belongs_to" EntityType="Self.Belongs_to" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cinema" EntityType="Self.Cinema" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Critic" EntityType="Self.Critic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Director" EntityType="Self.Director" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Distributor" EntityType="Self.Distributor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Festival" EntityType="Self.Festival" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MovieFestival" EntityType="Self.MovieFestival" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MovieFestivalAward" EntityType="Self.MovieFestivalAward" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShowsMovie" EntityType="Self.ShowsMovie" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="AwardFestival_Award_FK" Association="Self.AwardFestival_Award_FK">
+            <End Role="Award" EntitySet="Award" />
+            <End Role="AwardFestival" EntitySet="AwardFestival" />
+          </AssociationSet>
+          <AssociationSet Name="AwardFestival_Festival_FK" Association="Self.AwardFestival_Festival_FK">
+            <End Role="Festival" EntitySet="Festival" />
+            <End Role="AwardFestival" EntitySet="AwardFestival" />
+          </AssociationSet>
+          <AssociationSet Name="Cinema_Place_FK" Association="Self.Cinema_Place_FK">
+            <End Role="Place" EntitySet="Place" />
+            <End Role="Cinema" EntitySet="Cinema" />
+          </AssociationSet>
+          <AssociationSet Name="Director_FK" Association="Self.Director_FK">
+            <End Role="Director" EntitySet="Director" />
+            <End Role="Movie" EntitySet="Movie" />
+          </AssociationSet>
+          <AssociationSet Name="Festival_Place_FK" Association="Self.Festival_Place_FK">
+            <End Role="Place" EntitySet="Place" />
+            <End Role="Festival" EntitySet="Festival" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_1" Association="Self.FK_ASS_1">
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="Acts" EntitySet="Acts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_17" Association="Self.FK_ASS_17">
+            <End Role="Cinema" EntitySet="Cinema" />
+            <End Role="ShowsMovie" EntitySet="ShowsMovie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_18" Association="Self.FK_ASS_18">
+            <End Role="Movie" EntitySet="Movie" />
+            <End Role="ShowsMovie" EntitySet="ShowsMovie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_2" Association="Self.FK_ASS_2">
+            <End Role="Movie" EntitySet="Movie" />
+            <End Role="Acts" EntitySet="Acts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_3" Association="Self.FK_ASS_3">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Belongs_to" EntitySet="Belongs_to" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_4" Association="Self.FK_ASS_4">
+            <End Role="Movie" EntitySet="Movie" />
+            <End Role="Belongs_to" EntitySet="Belongs_to" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_7" Association="Self.FK_ASS_7">
+            <End Role="AwardFestival" EntitySet="AwardFestival" />
+            <End Role="MovieFestivalAward" EntitySet="MovieFestivalAward" />
+          </AssociationSet>
+          <AssociationSet Name="Movie_Director_FK" Association="Self.Movie_Director_FK">
+            <End Role="Director" EntitySet="Director" />
+            <End Role="Movie" EntitySet="Movie" />
+          </AssociationSet>
+          <AssociationSet Name="Movie_Distributor_FK" Association="Self.Movie_Distributor_FK">
+            <End Role="Distributor" EntitySet="Distributor" />
+            <End Role="Movie" EntitySet="Movie" />
+          </AssociationSet>
+          <AssociationSet Name="MovieFestival_Festival_FK" Association="Self.MovieFestival_Festival_FK">
+            <End Role="Festival" EntitySet="Festival" />
+            <End Role="MovieFestival" EntitySet="MovieFestival" />
+          </AssociationSet>
+          <AssociationSet Name="MovieFestival_Movie_FK" Association="Self.MovieFestival_Movie_FK">
+            <End Role="Movie" EntitySet="Movie" />
+            <End Role="MovieFestival" EntitySet="MovieFestival" />
+          </AssociationSet>
+          <AssociationSet Name="Review_Critic_FK" Association="Self.Review_Critic_FK">
+            <End Role="Critic" EntitySet="Critic" />
+            <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
+          <AssociationSet Name="Review_Movie_FK" Association="Self.Review_Movie_FK">
+            <End Role="Movie" EntitySet="Movie" />
+            <End Role="Review" EntitySet="Review" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IMDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="SearchMovieByTitle_Result">
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Desctiprion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id" Type="Int32" Nullable="false" />
+          <Property Name="Distributor_Id" Type="Int32" Nullable="false" />
+          <Property Name="MetaScore" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Actor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Movies" Relationship="Self.Acts" FromRole="Actor" ToRole="Movie" />
+          <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Award">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AwardFestivals" Relationship="Self.AwardFestival_Award_FK" FromRole="Award" ToRole="AwardFestival" />
+        </EntityType>
+        <EntityType Name="AwardFestival">
+          <Key>
+            <PropertyRef Name="Award_Id" />
+            <PropertyRef Name="Festival_Id" />
+          </Key>
+          <Property Name="Award_Id" Type="Int32" Nullable="false" />
+          <Property Name="Festival_Id" Type="Int32" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <NavigationProperty Name="Award" Relationship="Self.AwardFestival_Award_FK" FromRole="AwardFestival" ToRole="Award" />
+          <NavigationProperty Name="Festival" Relationship="Self.AwardFestival_Festival_FK" FromRole="AwardFestival" ToRole="Festival" />
+          <NavigationProperty Name="MovieFestivalAwards" Relationship="Self.FK_ASS_7" FromRole="AwardFestival" ToRole="MovieFestivalAward" />
+        </EntityType>
+        <EntityType Name="Cinema">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Place_Id" Type="Int32" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Place" Relationship="Self.Cinema_Place_FK" FromRole="Cinema" ToRole="Place" />
+          <NavigationProperty Name="ShowsMovies" Relationship="Self.FK_ASS_17" FromRole="Cinema" ToRole="ShowsMovie" />
+        </EntityType>
+        <EntityType Name="Critic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReliabilityScore" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Reviews" Relationship="Self.Review_Critic_FK" FromRole="Critic" ToRole="Review" />
+        </EntityType>
+        <EntityType Name="Director">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" />
+          <NavigationProperty Name="Movies" Relationship="Self.Director_FK" FromRole="Director" ToRole="Movie" />
+          <NavigationProperty Name="Movies1" Relationship="Self.Movie_Director_FK" FromRole="Director" ToRole="Movie" />
+          <Property Name="Birthday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Distributor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Movies" Relationship="Self.Movie_Distributor_FK" FromRole="Distributor" ToRole="Movie" />
+        </EntityType>
+        <EntityType Name="Festival">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Place_Id" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="AwardFestivals" Relationship="Self.AwardFestival_Festival_FK" FromRole="Festival" ToRole="AwardFestival" />
+          <NavigationProperty Name="Place" Relationship="Self.Festival_Place_FK" FromRole="Festival" ToRole="Place" />
+          <NavigationProperty Name="Movies" Relationship="Self.MovieFestival" FromRole="Festival" ToRole="Movie" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Movies" Relationship="Self.Belongs_to" FromRole="Genre" ToRole="Movie" />
+        </EntityType>
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Desctiprion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Director_Id" Type="Int32" Nullable="false" />
+          <Property Name="Distributor_Id" Type="Int32" Nullable="false" />
+          <Property Name="MetaScore" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Director" Relationship="Self.Director_FK" FromRole="Movie" ToRole="Director" />
+          <NavigationProperty Name="Director1" Relationship="Self.Movie_Director_FK" FromRole="Movie" ToRole="Director" />
+          <NavigationProperty Name="Distributor" Relationship="Self.Movie_Distributor_FK" FromRole="Movie" ToRole="Distributor" />
+          <NavigationProperty Name="ShowsMovies" Relationship="Self.FK_ASS_18" FromRole="Movie" ToRole="ShowsMovie" />
+          <NavigationProperty Name="Reviews" Relationship="Self.Review_Movie_FK" FromRole="Movie" ToRole="Review" />
+          <NavigationProperty Name="Actors" Relationship="Self.Acts" FromRole="Movie" ToRole="Actor" />
+          <NavigationProperty Name="Genres" Relationship="Self.Belongs_to" FromRole="Movie" ToRole="Genre" />
+          <NavigationProperty Name="Festivals" Relationship="Self.MovieFestival" FromRole="Movie" ToRole="Festival" />
+        </EntityType>
+        <EntityType Name="MovieFestivalAward">
+          <Key>
+            <PropertyRef Name="AwardFestival_Award_Id" />
+            <PropertyRef Name="AwardFestival_Festival_Id" />
+            <PropertyRef Name="MovieFestival_Movie_Id" />
+          </Key>
+          <Property Name="AwardFestival_Award_Id" Type="Int32" Nullable="false" />
+          <Property Name="AwardFestival_Festival_Id" Type="Int32" Nullable="false" />
+          <Property Name="MovieFestival_Movie_Id" Type="Int32" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <NavigationProperty Name="AwardFestival" Relationship="Self.FK_ASS_7" FromRole="MovieFestivalAward" ToRole="AwardFestival" />
+        </EntityType>
+        <EntityType Name="Place">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Cinemas" Relationship="Self.Cinema_Place_FK" FromRole="Place" ToRole="Cinema" />
+          <NavigationProperty Name="Festivals" Relationship="Self.Festival_Place_FK" FromRole="Place" ToRole="Festival" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Critic_Id" Type="Int32" Nullable="false" />
+          <Property Name="Rate" Type="Int32" />
+          <Property Name="Movie_Id" Type="Int32" Nullable="false" />
+          <Property Name="Deleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Critic" Relationship="Self.Review_Critic_FK" FromRole="Review" ToRole="Critic" />
+          <NavigationProperty Name="Movie" Relationship="Self.Review_Movie_FK" FromRole="Review" ToRole="Movie" />
+          <Property Name="Approved" Type="Boolean" />
+          <Property Name="ApprovalDateTime" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="ShowsMovie">
+          <Key>
+            <PropertyRef Name="Cinema_Id" />
+            <PropertyRef Name="Movie_Id" />
+          </Key>
+          <Property Name="Cinema_Id" Type="Int32" Nullable="false" />
+          <Property Name="Movie_Id" Type="Int32" Nullable="false" />
+          <Property Name="FromDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ToDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Deleted" Type="Boolean" />
+          <NavigationProperty Name="Cinema" Relationship="Self.FK_ASS_17" FromRole="ShowsMovie" ToRole="Cinema" />
+          <NavigationProperty Name="Movie" Relationship="Self.FK_ASS_18" FromRole="ShowsMovie" ToRole="Movie" />
+        </EntityType>
+        <Association Name="AwardFestival_Award_FK">
+          <End Role="Award" Type="Self.Award" Multiplicity="1" />
+          <End Role="AwardFestival" Type="Self.AwardFestival" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Award">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AwardFestival">
+              <PropertyRef Name="Award_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AwardFestival_Festival_FK">
+          <End Role="Festival" Type="Self.Festival" Multiplicity="1" />
+          <End Role="AwardFestival" Type="Self.AwardFestival" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Festival">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AwardFestival">
+              <PropertyRef Name="Festival_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_7">
+          <End Role="AwardFestival" Type="Self.AwardFestival" Multiplicity="1" />
+          <End Role="MovieFestivalAward" Type="Self.MovieFestivalAward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AwardFestival">
+              <PropertyRef Name="Award_Id" />
+              <PropertyRef Name="Festival_Id" />
+            </Principal>
+            <Dependent Role="MovieFestivalAward">
+              <PropertyRef Name="AwardFestival_Award_Id" />
+              <PropertyRef Name="AwardFestival_Festival_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Cinema_Place_FK">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="Cinema" Type="Self.Cinema" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cinema">
+              <PropertyRef Name="Place_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_17">
+          <End Role="Cinema" Type="Self.Cinema" Multiplicity="1" />
+          <End Role="ShowsMovie" Type="Self.ShowsMovie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cinema">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShowsMovie">
+              <PropertyRef Name="Cinema_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Review_Critic_FK">
+          <End Role="Critic" Type="Self.Critic" Multiplicity="1" />
+          <End Role="Review" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Critic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="Critic_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Director_FK">
+          <End Role="Director" Type="Self.Director" Multiplicity="1" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Director">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="Director_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Movie_Director_FK">
+          <End Role="Director" Type="Self.Director" Multiplicity="1" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Director">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="Director_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Movie_Distributor_FK">
+          <End Role="Distributor" Type="Self.Distributor" Multiplicity="1" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distributor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Movie">
+              <PropertyRef Name="Distributor_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Festival_Place_FK">
+          <End Role="Place" Type="Self.Place" Multiplicity="1" />
+          <End Role="Festival" Type="Self.Festival" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Place">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Festival">
+              <PropertyRef Name="Place_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ASS_18">
+          <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+          <End Role="ShowsMovie" Type="Self.ShowsMovie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShowsMovie">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Review_Movie_FK">
+          <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+          <End Role="Review" Type="Self.Review" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Review">
+              <PropertyRef Name="Movie_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Acts">
+          <End Role="Actor" Type="Self.Actor" Multiplicity="*" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+        </Association>
+        <Association Name="Belongs_to">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="*" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+        </Association>
+        <Association Name="MovieFestival">
+          <End Role="Festival" Type="Self.Festival" Multiplicity="*" />
+          <End Role="Movie" Type="Self.Movie" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="IMDBEntities7" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actors" EntityType="Self.Actor" />
+          <EntitySet Name="Awards" EntityType="Self.Award" />
+          <EntitySet Name="AwardFestivals" EntityType="Self.AwardFestival" />
+          <EntitySet Name="Cinemas" EntityType="Self.Cinema" />
+          <EntitySet Name="Critics" EntityType="Self.Critic" />
+          <EntitySet Name="Directors" EntityType="Self.Director" />
+          <EntitySet Name="Distributors" EntityType="Self.Distributor" />
+          <EntitySet Name="Festivals" EntityType="Self.Festival" />
+          <EntitySet Name="Genres" EntityType="Self.Genre" />
+          <EntitySet Name="Movies" EntityType="Self.Movie" />
+          <EntitySet Name="MovieFestivalAwards" EntityType="Self.MovieFestivalAward" />
+          <EntitySet Name="Places" EntityType="Self.Place" />
+          <EntitySet Name="Reviews" EntityType="Self.Review" />
+          <EntitySet Name="ShowsMovies" EntityType="Self.ShowsMovie" />
+          <AssociationSet Name="AwardFestival_Award_FK" Association="Self.AwardFestival_Award_FK">
+            <End Role="Award" EntitySet="Awards" />
+            <End Role="AwardFestival" EntitySet="AwardFestivals" />
+          </AssociationSet>
+          <AssociationSet Name="AwardFestival_Festival_FK" Association="Self.AwardFestival_Festival_FK">
+            <End Role="Festival" EntitySet="Festivals" />
+            <End Role="AwardFestival" EntitySet="AwardFestivals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_7" Association="Self.FK_ASS_7">
+            <End Role="AwardFestival" EntitySet="AwardFestivals" />
+            <End Role="MovieFestivalAward" EntitySet="MovieFestivalAwards" />
+          </AssociationSet>
+          <AssociationSet Name="Cinema_Place_FK" Association="Self.Cinema_Place_FK">
+            <End Role="Place" EntitySet="Places" />
+            <End Role="Cinema" EntitySet="Cinemas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_17" Association="Self.FK_ASS_17">
+            <End Role="Cinema" EntitySet="Cinemas" />
+            <End Role="ShowsMovie" EntitySet="ShowsMovies" />
+          </AssociationSet>
+          <AssociationSet Name="Review_Critic_FK" Association="Self.Review_Critic_FK">
+            <End Role="Critic" EntitySet="Critics" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="Director_FK" Association="Self.Director_FK">
+            <End Role="Director" EntitySet="Directors" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+          <AssociationSet Name="Movie_Director_FK" Association="Self.Movie_Director_FK">
+            <End Role="Director" EntitySet="Directors" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+          <AssociationSet Name="Movie_Distributor_FK" Association="Self.Movie_Distributor_FK">
+            <End Role="Distributor" EntitySet="Distributors" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+          <AssociationSet Name="Festival_Place_FK" Association="Self.Festival_Place_FK">
+            <End Role="Place" EntitySet="Places" />
+            <End Role="Festival" EntitySet="Festivals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ASS_18" Association="Self.FK_ASS_18">
+            <End Role="Movie" EntitySet="Movies" />
+            <End Role="ShowsMovie" EntitySet="ShowsMovies" />
+          </AssociationSet>
+          <AssociationSet Name="Review_Movie_FK" Association="Self.Review_Movie_FK">
+            <End Role="Movie" EntitySet="Movies" />
+            <End Role="Review" EntitySet="Reviews" />
+          </AssociationSet>
+          <AssociationSet Name="Acts" Association="Self.Acts">
+            <End Role="Actor" EntitySet="Actors" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+          <AssociationSet Name="Belongs_to" Association="Self.Belongs_to">
+            <End Role="Genre" EntitySet="Genres" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+          <AssociationSet Name="MovieFestival" Association="Self.MovieFestival">
+            <End Role="Festival" EntitySet="Festivals" />
+            <End Role="Movie" EntitySet="Movies" />
+          </AssociationSet>
+          <FunctionImport Name="SearchMovieByTitle" IsComposable="true" ReturnType="Collection(IMDBModel.SearchMovieByTitle_Result)">
+          <Parameter Name="searchText" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AddActs">
+            <Parameter Name="actorId" Mode="In" Type="Int32" />
+            <Parameter Name="movieId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AddBelongsToGenre">
+            <Parameter Name="genreId" Mode="In" Type="Int32" />
+            <Parameter Name="movieId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AddMovieFestival">
+            <Parameter Name="festivalId" Mode="In" Type="Int32" />
+            <Parameter Name="movieId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IMDBModelStoreContainer" CdmEntityContainer="IMDBEntities7">
+          <EntitySetMapping Name="Actors">
+            <EntityTypeMapping TypeName="IMDBModel.Actor">
+              <MappingFragment StoreEntitySet="Actor">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Awards">
+            <EntityTypeMapping TypeName="IMDBModel.Award">
+              <MappingFragment StoreEntitySet="Award">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AwardFestivals">
+            <EntityTypeMapping TypeName="IMDBModel.AwardFestival">
+              <MappingFragment StoreEntitySet="AwardFestival">
+                <ScalarProperty Name="Award_Id" ColumnName="Award_Id" />
+                <ScalarProperty Name="Festival_Id" ColumnName="Festival_Id" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cinemas">
+            <EntityTypeMapping TypeName="IMDBModel.Cinema">
+              <MappingFragment StoreEntitySet="Cinema">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Critics">
+            <EntityTypeMapping TypeName="IMDBModel.Critic">
+              <MappingFragment StoreEntitySet="Critic">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="ReliabilityScore" ColumnName="ReliabilityScore" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Directors">
+            <EntityTypeMapping TypeName="IMDBModel.Director">
+              <MappingFragment StoreEntitySet="Director">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distributors">
+            <EntityTypeMapping TypeName="IMDBModel.Distributor">
+              <MappingFragment StoreEntitySet="Distributor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Festivals">
+            <EntityTypeMapping TypeName="IMDBModel.Festival">
+              <MappingFragment StoreEntitySet="Festival">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genres">
+            <EntityTypeMapping TypeName="IMDBModel.Genre">
+              <MappingFragment StoreEntitySet="Genre">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movies">
+            <EntityTypeMapping TypeName="IMDBModel.Movie">
+              <MappingFragment StoreEntitySet="Movie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Desctiprion" ColumnName="Desctiprion" />
+                <ScalarProperty Name="Director_Id" ColumnName="Director_Id" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+                <ScalarProperty Name="MetaScore" ColumnName="MetaScore" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MovieFestivalAwards">
+            <EntityTypeMapping TypeName="IMDBModel.MovieFestivalAward">
+              <MappingFragment StoreEntitySet="MovieFestivalAward">
+                <ScalarProperty Name="AwardFestival_Award_Id" ColumnName="AwardFestival_Award_Id" />
+                <ScalarProperty Name="AwardFestival_Festival_Id" ColumnName="AwardFestival_Festival_Id" />
+                <ScalarProperty Name="MovieFestival_Movie_Id" ColumnName="MovieFestival_Movie_Id" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Places">
+            <EntityTypeMapping TypeName="IMDBModel.Place">
+              <MappingFragment StoreEntitySet="Place">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reviews">
+            <EntityTypeMapping TypeName="IMDBModel.Review">
+              <MappingFragment StoreEntitySet="Review">
+                <ScalarProperty Name="ApprovalDateTime" ColumnName="ApprovalDateTime" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="Critic_Id" ColumnName="Critic_Id" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShowsMovies">
+            <EntityTypeMapping TypeName="IMDBModel.ShowsMovie">
+              <MappingFragment StoreEntitySet="ShowsMovie">
+                <ScalarProperty Name="Cinema_Id" ColumnName="Cinema_Id" />
+                <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Acts" TypeName="IMDBModel.Acts" StoreEntitySet="Acts">
+            <EndProperty Name="Actor">
+              <ScalarProperty Name="Id" ColumnName="Actor_Id" />
+            </EndProperty>
+            <EndProperty Name="Movie">
+              <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Belongs_to" TypeName="IMDBModel.Belongs_to" StoreEntitySet="Belongs_to">
+            <EndProperty Name="Genre">
+              <ScalarProperty Name="Id" ColumnName="Genre_Id" />
+            </EndProperty>
+            <EndProperty Name="Movie">
+              <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="MovieFestival" TypeName="IMDBModel.MovieFestival" StoreEntitySet="MovieFestival">
+            <EndProperty Name="Festival">
+              <ScalarProperty Name="Id" ColumnName="Festival_Id" />
+            </EndProperty>
+            <EndProperty Name="Movie">
+              <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionName="IMDBModel.Store.SearchMovieByTitle" FunctionImportName="SearchMovieByTitle">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="IMDBModel.SearchMovieByTitle_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Desctiprion" ColumnName="Desctiprion" />
+                <ScalarProperty Name="Director_Id" ColumnName="Director_Id" />
+                <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+                <ScalarProperty Name="MetaScore" ColumnName="MetaScore" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="AddActs" FunctionName="IMDBModel.Store.AddActs" />
+          <FunctionImportMapping FunctionImportName="AddBelongsToGenre" FunctionName="IMDBModel.Store.AddBelongsToGenre" />
+          <FunctionImportMapping FunctionImportName="AddMovieFestival" FunctionName="IMDBModel.Store.AddMovieFestival" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

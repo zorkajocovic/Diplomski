@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MovieModelStoreContainer" CdmEntityContainer="MovieEntities">
+    <EntitySetMapping Name="Actors">
+      <EntityTypeMapping TypeName="MovieModel.Actor">
+        <MappingFragment StoreEntitySet="Actor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Awards">
+      <EntityTypeMapping TypeName="MovieModel.Award">
+        <MappingFragment StoreEntitySet="Award">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AwarsYear" ColumnName="AwarsYear" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AwardFestivals">
+      <EntityTypeMapping TypeName="MovieModel.AwardFestival">
+        <MappingFragment StoreEntitySet="AwardFestival">
+          <ScalarProperty Name="Award_Id" ColumnName="Award_Id" />
+          <ScalarProperty Name="Festival_Id" ColumnName="Festival_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cinemas">
+      <EntityTypeMapping TypeName="MovieModel.Cinema">
+        <MappingFragment StoreEntitySet="Cinema">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Critics">
+      <EntityTypeMapping TypeName="MovieModel.Critic">
+        <MappingFragment StoreEntitySet="Critic">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Criticism">
+      <EntityTypeMapping TypeName="MovieModel.Criticism">
+        <MappingFragment StoreEntitySet="Criticism">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Directors">
+      <EntityTypeMapping TypeName="MovieModel.Director">
+        <MappingFragment StoreEntitySet="Director">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors">
+      <EntityTypeMapping TypeName="MovieModel.Distributor">
+        <MappingFragment StoreEntitySet="Distributor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Festivals">
+      <EntityTypeMapping TypeName="MovieModel.Festival">
+        <MappingFragment StoreEntitySet="Festival">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="MovieModel.Genre">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="MovieModel.Movie">
+        <MappingFragment StoreEntitySet="Movie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Desctiprion" ColumnName="Desctiprion" />
+          <ScalarProperty Name="Director_Id" ColumnName="Director_Id" />
+          <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movie_criticism">
+      <EntityTypeMapping TypeName="MovieModel.Movie_criticism">
+        <MappingFragment StoreEntitySet="Movie_criticism">
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+          <ScalarProperty Name="Criticism_Id" ColumnName="Criticism_Id" />
+          <ScalarProperty Name="Critic_Id" ColumnName="Critic_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="MovieModel.Place">
+        <MappingFragment StoreEntitySet="Place">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowsMovies">
+      <EntityTypeMapping TypeName="MovieModel.ShowsMovie">
+        <MappingFragment StoreEntitySet="ShowsMovie">
+          <ScalarProperty Name="Cinema_Id" ColumnName="Cinema_Id" />
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Acts" TypeName="MovieModel.Acts" StoreEntitySet="Acts">
+      <EndProperty Name="Actor">
+        <ScalarProperty Name="Id" ColumnName="Actor_Id" />
+      </EndProperty>
+      <EndProperty Name="Movie">
+        <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Belongs_to" TypeName="MovieModel.Belongs_to" StoreEntitySet="Belongs_to">
+      <EndProperty Name="Genre">
+        <ScalarProperty Name="Id" ColumnName="Genre_Id" />
+      </EndProperty>
+      <EndProperty Name="Movie">
+        <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MovieFestivalAward" TypeName="MovieModel.MovieFestivalAward" StoreEntitySet="MovieFestivalAward">
+      <EndProperty Name="AwardFestival">
+        <ScalarProperty Name="Award_Id" ColumnName="AwardFestival_Award_Id" />
+        <ScalarProperty Name="Festival_Id" ColumnName="AwardFestival_Festival_Id" />
+      </EndProperty>
+      <EndProperty Name="Movie">
+        <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

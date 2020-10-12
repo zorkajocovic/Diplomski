@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="IMDBModelStoreContainer" CdmEntityContainer="IMDBEntities7">
+    <EntitySetMapping Name="Actors">
+      <EntityTypeMapping TypeName="IMDBModel.Actor">
+        <MappingFragment StoreEntitySet="Actor">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Awards">
+      <EntityTypeMapping TypeName="IMDBModel.Award">
+        <MappingFragment StoreEntitySet="Award">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AwardFestivals">
+      <EntityTypeMapping TypeName="IMDBModel.AwardFestival">
+        <MappingFragment StoreEntitySet="AwardFestival">
+          <ScalarProperty Name="Award_Id" ColumnName="Award_Id" />
+          <ScalarProperty Name="Festival_Id" ColumnName="Festival_Id" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cinemas">
+      <EntityTypeMapping TypeName="IMDBModel.Cinema">
+        <MappingFragment StoreEntitySet="Cinema">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Critics">
+      <EntityTypeMapping TypeName="IMDBModel.Critic">
+        <MappingFragment StoreEntitySet="Critic">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="ReliabilityScore" ColumnName="ReliabilityScore" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Directors">
+      <EntityTypeMapping TypeName="IMDBModel.Director">
+        <MappingFragment StoreEntitySet="Director">
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distributors">
+      <EntityTypeMapping TypeName="IMDBModel.Distributor">
+        <MappingFragment StoreEntitySet="Distributor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Festivals">
+      <EntityTypeMapping TypeName="IMDBModel.Festival">
+        <MappingFragment StoreEntitySet="Festival">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Place_Id" ColumnName="Place_Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="IMDBModel.Genre">
+        <MappingFragment StoreEntitySet="Genre">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Movies">
+      <EntityTypeMapping TypeName="IMDBModel.Movie">
+        <MappingFragment StoreEntitySet="Movie">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Desctiprion" ColumnName="Desctiprion" />
+          <ScalarProperty Name="Director_Id" ColumnName="Director_Id" />
+          <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+          <ScalarProperty Name="MetaScore" ColumnName="MetaScore" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MovieFestivalAwards">
+      <EntityTypeMapping TypeName="IMDBModel.MovieFestivalAward">
+        <MappingFragment StoreEntitySet="MovieFestivalAward">
+          <ScalarProperty Name="AwardFestival_Award_Id" ColumnName="AwardFestival_Award_Id" />
+          <ScalarProperty Name="AwardFestival_Festival_Id" ColumnName="AwardFestival_Festival_Id" />
+          <ScalarProperty Name="MovieFestival_Movie_Id" ColumnName="MovieFestival_Movie_Id" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="IMDBModel.Place">
+        <MappingFragment StoreEntitySet="Place">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="IMDBModel.Review">
+        <MappingFragment StoreEntitySet="Review">
+          <ScalarProperty Name="ApprovalDateTime" ColumnName="ApprovalDateTime" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Critic_Id" ColumnName="Critic_Id" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ShowsMovies">
+      <EntityTypeMapping TypeName="IMDBModel.ShowsMovie">
+        <MappingFragment StoreEntitySet="ShowsMovie">
+          <ScalarProperty Name="Cinema_Id" ColumnName="Cinema_Id" />
+          <ScalarProperty Name="Movie_Id" ColumnName="Movie_Id" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Acts" TypeName="IMDBModel.Acts" StoreEntitySet="Acts">
+      <EndProperty Name="Actor">
+        <ScalarProperty Name="Id" ColumnName="Actor_Id" />
+      </EndProperty>
+      <EndProperty Name="Movie">
+        <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Belongs_to" TypeName="IMDBModel.Belongs_to" StoreEntitySet="Belongs_to">
+      <EndProperty Name="Genre">
+        <ScalarProperty Name="Id" ColumnName="Genre_Id" />
+      </EndProperty>
+      <EndProperty Name="Movie">
+        <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MovieFestival" TypeName="IMDBModel.MovieFestival" StoreEntitySet="MovieFestival">
+      <EndProperty Name="Festival">
+        <ScalarProperty Name="Id" ColumnName="Festival_Id" />
+      </EndProperty>
+      <EndProperty Name="Movie">
+        <ScalarProperty Name="Id" ColumnName="Movie_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionName="IMDBModel.Store.SearchMovieByTitle" FunctionImportName="SearchMovieByTitle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="IMDBModel.SearchMovieByTitle_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Desctiprion" ColumnName="Desctiprion" />
+          <ScalarProperty Name="Director_Id" ColumnName="Director_Id" />
+          <ScalarProperty Name="Distributor_Id" ColumnName="Distributor_Id" />
+          <ScalarProperty Name="MetaScore" ColumnName="MetaScore" />
+          <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="AddActs" FunctionName="IMDBModel.Store.AddActs" />
+    <FunctionImportMapping FunctionImportName="AddBelongsToGenre" FunctionName="IMDBModel.Store.AddBelongsToGenre" />
+    <FunctionImportMapping FunctionImportName="AddMovieFestival" FunctionName="IMDBModel.Store.AddMovieFestival" />
+  </EntityContainerMapping>
+</Mapping>

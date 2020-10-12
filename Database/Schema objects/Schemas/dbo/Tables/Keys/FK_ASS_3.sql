@@ -1,0 +1,1 @@
+﻿ALTER TABLE Belongs_to ADD CONSTRAINT FK_ASS_3 FOREIGN KEY ( Genre_Id ) REFERENCES Genre ( Id ) ;

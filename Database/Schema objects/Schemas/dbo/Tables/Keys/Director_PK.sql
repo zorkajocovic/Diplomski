@@ -1,0 +1,1 @@
+﻿ALTER TABLE Director ADD CONSTRAINT Director_PK PRIMARY KEY ( Id ) ;

@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MovieModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actor">
+    <Key>
+      <PropertyRef Name="ActorId" />
+    </Key>
+    <Property Name="ActorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="10" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Acts">
+    <Key>
+      <PropertyRef Name="ActorId" />
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="ActorId" Type="int" Nullable="false" />
+    <Property Name="MovieId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Award">
+    <Key>
+      <PropertyRef Name="AwardId" />
+    </Key>
+    <Property Name="AwardId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="AwarsYear" Type="date" />
+  </EntityType>
+  <EntityType Name="Awards">
+    <Key>
+      <PropertyRef Name="MovieId" />
+      <PropertyRef Name="FestivalId" />
+      <PropertyRef Name="AwardId" />
+    </Key>
+    <Property Name="MovieId" Type="int" Nullable="false" />
+    <Property Name="FestivalId" Type="int" Nullable="false" />
+    <Property Name="AwardId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Belongs_to">
+    <Key>
+      <PropertyRef Name="GenreId" />
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="GenreId" Type="int" Nullable="false" />
+    <Property Name="MovieId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cinema">
+    <Key>
+      <PropertyRef Name="CinemaId" />
+    </Key>
+    <Property Name="CinemaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="PlaceId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Critic">
+    <Key>
+      <PropertyRef Name="CriticId" />
+    </Key>
+    <Property Name="CriticId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="15" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Criticism">
+    <Key>
+      <PropertyRef Name="CriticismId" />
+    </Key>
+    <Property Name="CriticismId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="text" />
+  </EntityType>
+  <EntityType Name="Director">
+    <Key>
+      <PropertyRef Name="DirectorId" />
+    </Key>
+    <Property Name="DirectorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="10" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Distributor">
+    <Key>
+      <PropertyRef Name="DistributorId" />
+    </Key>
+    <Property Name="DistributorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Festival">
+    <Key>
+      <PropertyRef Name="FestivalId" />
+    </Key>
+    <Property Name="FestivalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+    <Property Name="PlaceId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" />
+  </EntityType>
+  <EntityType Name="Genre">
+    <Key>
+      <PropertyRef Name="GenreId" />
+    </Key>
+    <Property Name="GenreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Movie">
+    <Key>
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="MovieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Duration" Type="decimal" Precision="6" Scale="2" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Desctiprion" Type="text" />
+    <Property Name="DirectorId" Type="int" Nullable="false" />
+    <Property Name="DistributorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Movie_criticism">
+    <Key>
+      <PropertyRef Name="MovieId" />
+      <PropertyRef Name="CriticismId" />
+      <PropertyRef Name="CriticId" />
+    </Key>
+    <Property Name="MovieId" Type="int" Nullable="false" />
+    <Property Name="CriticismId" Type="int" Nullable="false" />
+    <Property Name="CriticId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="PlaceId" />
+    </Key>
+    <Property Name="PlaceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="ShowsMovie">
+    <Key>
+      <PropertyRef Name="CinemaId" />
+      <PropertyRef Name="MovieId" />
+    </Key>
+    <Property Name="CinemaId" Type="int" Nullable="false" />
+    <Property Name="MovieId" Type="int" Nullable="false" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="Awards_Award_FK">
+    <End Role="Award" Type="Self.Award" Multiplicity="1" />
+    <End Role="Awards" Type="Self.Awards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Award">
+        <PropertyRef Name="AwardId" />
+      </Principal>
+      <Dependent Role="Awards">
+        <PropertyRef Name="AwardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Awards_Festival_FK">
+    <End Role="Festival" Type="Self.Festival" Multiplicity="1" />
+    <End Role="Awards" Type="Self.Awards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Festival">
+        <PropertyRef Name="FestivalId" />
+      </Principal>
+      <Dependent Role="Awards">
+        <PropertyRef Name="FestivalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Awards_Movie_FK">
+    <End Role="Movie" Type="Self.Movie" Multiplicity="1" />
+    <End Role="Awards" Type="Self.Awards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Movie">
+        <PropertyRef Name="MovieId" />
+      </Principal>
+      <Dependent Role="Awards">
+        <PropertyRef Name="MovieId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Cinema_Place_FK">
+    <End Role="Place" Type="Self.Place" Multiplicity="1" />
+    <End Role="Cinema" Type="Self.Cinema" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="PlaceId" />
+      </Principal>
+      <Dependent Role="Cinema">
+        <PropertyRef Name="PlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="MovieModelStoreContainer">
+    <EntitySet Name="Actor" EntityType="Self.Actor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Acts" EntityType="Self.Acts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Award" EntityType="Self.Award" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Awards" EntityType="Self.Awards" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Belongs_to" EntityType="Self.Belongs_to" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cinema" EntityType="Self.Cinema" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Critic" EntityType="Self.Critic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Criticism" EntityType="Self.Criticism" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Director" EntityType="Self.Director" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distributor" EntityType="Self.Distributor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Festival" EntityType="Self.Festival" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movie" EntityType="Self.Movie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Movie_criticism" EntityType="Self.Movie_criticism" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ShowsMovie" EntityType="Self.ShowsMovie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="Awards_Award_FK" Association="Self.Awards_Award_FK">
+      <End Role="Award" EntitySet="Award" />
+      <End Role="Awards" EntitySet="Awards" />
+    </AssociationSet>
+    <AssociationSet Name="Awards_Festival_FK" Association="Self.Awards_Festival_FK">
+      <End Role="Festival" EntitySet="Festival" />
+      <End Role="Awards" EntitySet="Awards" />
+    </AssociationSet>
+    <AssociationSet Name="Awards_Movie_FK" Association="Self.Awards_Movie_FK">
+      <End Role="Movie" EntitySet="Movie" />
+      <End Role="Awards" EntitySet="Awards" />
+    </AssociationSet>
+    <AssociationSet Name="Cinema_Place_FK" Association="Self.Cinema_Place_FK">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Cinema" EntitySet="Cinema" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

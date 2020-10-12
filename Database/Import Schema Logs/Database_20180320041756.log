@@ -1,0 +1,84 @@
+20.3.2018. 17:17:56	This log contains information about the import schema operation into project 'Database' on computer 'ZORKA-PC' by user 'Zorka'.
+20.3.2018. 17:17:56	Import of database schema has started.
+20.3.2018. 17:18:08	Gathering database credentials
+20.3.2018. 17:18:08	Gathering database options
+20.3.2018. 17:18:08	Gathering users
+20.3.2018. 17:18:08	Gathering roles
+20.3.2018. 17:18:08	Gathering application roles
+20.3.2018. 17:18:08	Gathering role memberships
+20.3.2018. 17:18:08	Gathering filegroups
+20.3.2018. 17:18:08	Gathering full-text catalogs
+20.3.2018. 17:18:08	Gathering assemblies
+20.3.2018. 17:18:08	Gathering certificates
+20.3.2018. 17:18:08	Gathering asymmetric keys
+20.3.2018. 17:18:08	Gathering symmetric keys
+20.3.2018. 17:18:08	Gathering encrypted symmetric keys
+20.3.2018. 17:18:08	Gathering schemas
+20.3.2018. 17:18:08	Gathering XML schema collections
+20.3.2018. 17:18:08	Gathering user-defined data types
+20.3.2018. 17:18:08	Gathering user-defined types
+20.3.2018. 17:18:08	Gathering table types
+20.3.2018. 17:18:08	Gathering unique keys for table types
+20.3.2018. 17:18:08	Gathering primary keys for table types
+20.3.2018. 17:18:08	Gathering indexes for table types
+20.3.2018. 17:18:08	Gathering check constraints for table types
+20.3.2018. 17:18:08	Gathering default constraints for table types
+20.3.2018. 17:18:08	Gathering partition functions
+20.3.2018. 17:18:08	Gathering partition schemes
+20.3.2018. 17:18:08	Gathering functions
+20.3.2018. 17:18:09	Gathering encrypted functions
+20.3.2018. 17:18:09	Gathering aggregates
+20.3.2018. 17:18:09	Gathering procedures
+20.3.2018. 17:18:09	Gathering encrypted procedures
+20.3.2018. 17:18:09	Gathering tables
+20.3.2018. 17:18:09	Gathering primary keys
+20.3.2018. 17:18:09	Gathering unique constraints
+20.3.2018. 17:18:09	Gathering foreign keys
+20.3.2018. 17:18:09	Gathering default constraints
+20.3.2018. 17:18:09	Gathering check constraints
+20.3.2018. 17:18:09	Gathering views
+20.3.2018. 17:18:09	Gathering encrypted views
+20.3.2018. 17:18:09	Gathering indexes
+20.3.2018. 17:18:09	Gathering statistics
+20.3.2018. 17:18:09	Gathering full-text index stoplists
+20.3.2018. 17:18:09	Gathering search property lists
+20.3.2018. 17:18:09	Gathering search properties
+20.3.2018. 17:18:09	Gathering full-text indexes
+20.3.2018. 17:18:09	Gathering column store indexes
+20.3.2018. 17:18:09	Gathering spatial indexes
+20.3.2018. 17:18:09	Gathering XML indexes
+20.3.2018. 17:18:09	Gathering Selective XML indexes
+20.3.2018. 17:18:09	Gathering encrypted triggers
+20.3.2018. 17:18:09	Gathering triggers
+20.3.2018. 17:18:09	Gathering encrypted and clr ddl triggers
+20.3.2018. 17:18:09	Gathering ddl triggers
+20.3.2018. 17:18:09	Gathering synonyms
+20.3.2018. 17:18:09	Gathering defaults
+20.3.2018. 17:18:09	Gathering data constraint uddt bindings
+20.3.2018. 17:18:09	Gathering rules
+20.3.2018. 17:18:09	Gathering data constraint uddt bindings
+20.3.2018. 17:18:09	Gathering message types
+20.3.2018. 17:18:09	Gathering queues
+20.3.2018. 17:18:09	Gathering contracts
+20.3.2018. 17:18:09	Gathering services
+20.3.2018. 17:18:09	Gathering event notifications
+20.3.2018. 17:18:09	Gathering remote service bindings
+20.3.2018. 17:18:09	Gathering broker priorities
+20.3.2018. 17:18:09	Gathering signatures
+20.3.2018. 17:18:09	Gathering data compression options
+20.3.2018. 17:18:09	Gathering sequence types
+20.3.2018. 17:18:09	Gathering security policies
+20.3.2018. 17:18:09	Gather column encryption keys
+20.3.2018. 17:18:09	Gathering column master keys
+20.3.2018. 17:18:09	Gathering external data sources
+20.3.2018. 17:18:09	Gathering external file formats
+20.3.2018. 17:18:09	Gathering external tables
+20.3.2018. 17:18:09	Gathering extended properties
+20.3.2018. 17:18:10	Gathering credentials
+20.3.2018. 17:18:10	Gathering logins
+20.3.2018. 17:18:10	Gathering server audits
+20.3.2018. 17:18:11	Scanning project for duplicate elements
+20.3.2018. 17:18:11	Finished duplicate element processing
+20.3.2018. 17:18:11	Finished importing database.
+20.3.2018. 17:18:11	A summary of the import was saved to the following location: D:\Zorka\Desktop\Blok 6\Database\Database\Import Schema Logs\Database_20180320041756.log
+20.3.2018. 17:18:11	Click Finish to continue...

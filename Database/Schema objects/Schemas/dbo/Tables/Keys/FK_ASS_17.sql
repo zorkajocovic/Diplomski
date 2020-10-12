@@ -1,0 +1,1 @@
+﻿ALTER TABLE ShowsMovie ADD CONSTRAINT FK_ASS_17 FOREIGN KEY ( Cinema_Id ) REFERENCES Cinema ( Id ) ;

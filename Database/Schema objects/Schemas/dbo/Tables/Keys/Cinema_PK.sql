@@ -1,0 +1,1 @@
+﻿ALTER TABLE Cinema ADD CONSTRAINT Cinema_PK PRIMARY KEY ( Id ) ;
